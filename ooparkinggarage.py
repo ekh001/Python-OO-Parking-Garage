@@ -82,17 +82,15 @@ class Parking_Garage():
                 self.showParkingSpaces()
                 self.takeTicket()
         elif self.currentTicket['paid'] == True:
-            abandoned_spot = (input("\nPlease enter your current spot: "))
-            # ------Note: The below "if" statement is non-functioning; program accepts any input (not just "a", "b", or "c") and follows the conditional steps            
+            abandoned_spot = (input("\nPlease enter your current spot: "))          
             if abandoned_spot.lower() == "a1" or abandoned_spot.lower() == "b1" or abandoned_spot.lower() == "c1" or abandoned_spot.lower() == "d1" or abandoned_spot.lower() == "e1" or abandoned_spot.lower() == "f1":
                 print("Thank you! Have a great day.")
                 self.takenSpaces.remove(abandoned_spot.upper())
                 self.spots.append(abandoned_spot.upper())
                 self.tickets += 1
                 self.currentTicket['paid'] = False
-# ------Note: The below "elif" statement is non-functioning. 
             else:
-                print("Try again, liz")
+                print("Sorry, I didn't quite get that. Try again?")
 
 # Turn the dream into a reality. 
 my_Garage = Parking_Garage()
